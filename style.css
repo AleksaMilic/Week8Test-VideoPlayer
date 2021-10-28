@@ -161,3 +161,41 @@ input[type="range"]::-moz-range-thumb {
   background: #ffc600;
   cursor: pointer;
 }
+.controls:before,
+.controls:after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    black,
+    blue,
+    green,
+    purple,
+    cyan,
+    magenta,
+    red
+  );
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.controls:after {
+  filter: blur(50px);
+}
